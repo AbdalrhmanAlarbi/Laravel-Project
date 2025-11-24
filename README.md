@@ -1,4 +1,45 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Project with DDEV
+
+## Getting Started
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/AbdalrhmanAlarbi/Laravel-Project.git
+    cd Laravel-Project
+    ```
+
+2.  **Start DDEV**:
+    ```bash
+    ddev start
+    ```
+
+3.  **Install Dependencies**:
+    ```bash
+    ddev composer install
+    ddev npm install
+    ```
+
+4.  **Build Frontend Assets**:
+    ```bash
+    ddev npm run build
+    ```
+
+5.  **Setup Environment**:
+    ```bash
+    ddev artisan key:generate
+    ddev artisan migrate
+    ```
+
+6.  **Access the Site**:
+    Visit [https://newproject.ddev.site](https://newproject.ddev.site)
+
+## Development
+
+To run the Vite development server with HMR:
+```bash
+ddev npm run dev
+```
+
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>

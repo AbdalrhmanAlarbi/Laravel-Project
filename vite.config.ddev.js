@@ -1,19 +1,18 @@
+// vite.config.ddev.js - Configuration for ddev development
+// Use this when running: ddev start (current setup)
+
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 
-// Auto-detect if running in ddev or localhost
-// DDEV sets DDEV_PROJECT environment variable
-const isDdev = process.env.DDEV_PROJECT || process.env.DDEV_SITENAME;
-
 export default defineConfig({
     server: {
-        host: isDdev ? '0.0.0.0' : 'localhost',
+        host: '0.0.0.0',
         port: 5173,
         strictPort: true,
         hmr: {
-            host: isDdev ? 'newproject.ddev.site' : 'localhost',
-            protocol: isDdev ? 'wss' : 'ws',  // wss for HTTPS (ddev), ws for HTTP (localhost)
+            host: 'newproject.ddev.site',
+            protocol: 'wss',  // Secure WebSocket for HTTPS
             port: 5173,
         },
     },
@@ -26,3 +25,4 @@ export default defineConfig({
         tailwindcss(),
     ],
 });
+
